@@ -31,10 +31,11 @@ public class ValueCalculator {
     });
     theFirstHalfCalcThread.start();
     theSecondHalfCalcThread.start();
-    theFirstHalfCalcThread.join();
-    theSecondHalfCalcThread.join();
 
+
+    theFirstHalfCalcThread.join();
     System.arraycopy(theFirstHalf, 0, values, 0, halfSize); // concatenate arrays
+    theSecondHalfCalcThread.join();
     System.arraycopy(theSecondHalf, 0, values, halfSize, halfSize);
 
     long execTime = System.currentTimeMillis() - startTime; // calculate execution time
