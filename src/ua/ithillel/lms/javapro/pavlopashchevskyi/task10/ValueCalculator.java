@@ -32,7 +32,6 @@ public class ValueCalculator {
     theFirstHalfCalcThread.start();
     theSecondHalfCalcThread.start();
 
-
     theFirstHalfCalcThread.join();
     System.arraycopy(theFirstHalf, 0, values, 0, halfSize); // concatenate arrays
     theSecondHalfCalcThread.join();
